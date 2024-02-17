@@ -1,0 +1,14 @@
+{
+    "require": {
+        "facebook/graph-sdk": "^5.1",
+        "stripe/stripe-php": "^7.76",
+        "nesbot/carbon": "2.46",
+        "twilio/sdk": "^6.20",
+        "pelago/emogrifier": "3.1.0"
+    },
+    
+  "replace": {  
+        "symfony/polyfill-php80": "*"
+  }
+    
+}

@@ -1,0 +1,8 @@
+/.vscode
+/nbproject
+/.remote-sync.json
+/.ftpconfig
+/.ftpignore
+/.idea
+/trash.php
+node_modules
