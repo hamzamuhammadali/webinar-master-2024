@@ -46,10 +46,33 @@
             </div>
 
             <div class="airEditorArea" style="margin-top: 20px;">
-                <div name="content"
-                     id="airCopy"><?php echo isset( $webinar_data->air_html ) ? stripcslashes( $webinar_data->air_html ) : ""; ?></div>
+                <!-- <div name="content"
+                     id="airCopy"><?php// echo isset( $webinar_data->air_html ) ? stripcslashes( $webinar_data->air_html ) : ""; ?></div> -->
 
-
+                     <?php
+                    $editor_content = isset( $webinar_data->air_html ) ? stripcslashes( $webinar_data->air_html ) : "";
+                    // added default wordpress editor instead of summernote editor
+                    $content = $editor_content; // Initial content
+                    $editor_id = 'airCopy_editor'; // Unique ID for the editor
+                    $settings = array(
+                        'textarea_name' => 'airCopy_textarea', // Name attribute for the textarea
+                        'textarea_rows' => 10, // Number of rows for the textarea
+                        'tinymce' => array(
+                            'toolbar' => array(
+                                array('style', 'style'),
+                                array('font', array('bold', 'underline', 'clear')),
+                                array('fontname', array('fontname')),
+                                array('color', array('color')),
+                                array('para', array('ul', 'ol', 'paragraph')),
+                                array('table', array('table')),
+                                array('insert', array('link')),
+                                array('view', array('fullscreen', 'codeview', 'help'))
+                            )
+                        )
+                    );
+                    // Generate the editor
+                    wp_editor($content, $editor_id, $settings);
+                    ?>
                 <div class="airExtraOptions">
                     <span class="airSwitchTitle"><?php _e( 'Order Button To Copy', 'webinarignition' ) ?></span>
                     <span class="airSwitchInfo"><?php _e( 'This is the copy that is displayed on the button...', 'webinarignition' ) ?></span>
@@ -121,9 +144,17 @@
                         }) ;
 
                         function saveAirCTA(show_success_message) {
-
+                            var contenta;
+                            var editor = tinyMCE.get('airCopy_editor');
+                            if (editor) {
+                                // Ok, the active tab is Visual
+                                contenta = editor.getContent();
+                            } else {
+                                // The active tab is HTML, so just query the textarea
+                                contenta = $('#'+'airCopy_editor').val();
+                            }
                             var $toggle = $("#airToggle").val(),
-                                $html = $("#airCopy").summernote('code'),
+                                $html = contenta,
                                 $btncopy = $("#air_btn_copy").val(),
                                 $btnurl = $("#air_btn_url").val(),
                                 $btncolor = $("#air_btn_color").val(),
