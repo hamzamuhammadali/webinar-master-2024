@@ -32,6 +32,7 @@
                     <div class="col-sm-9">
                         <textarea name="webinarignition_footer_text" id="webinarignition_footer_text" style="width:100%; height: 75px;" class="" placeholder="<?php _e('{privacy_policy} | {imprint} | © Copyright {year} {site_title}') ?>"><?php echo ! empty( $webinarignition_footer_text ) ? esc_html( $webinarignition_footer_text ) : '{privacy_policy} | {imprint} | © Copyright {year} {site_title}'; ?></textarea> 
                         <span class="help-block"><?php  _e( 'The text to appear in the footer of all WebinarIgnition pages and emails. Available placeholders: {site_title}, {year}, {imprint}, {privacy_policy}, {site_description}', 'webinarignition' ); ?></span>
+                        <span class="help-block"><?php  _e( 'To display the footer please copy this shortcode', 'webinarignition' ); ?><code>[webinarignition_footer]</code></span>
                     </div>
                   </div>
                   
@@ -42,6 +43,7 @@
                     <div class="col-sm-9">
                         <textarea name="webinarignition_footer_text" id="webinarignition_footer_text" style="width:100%; height: 75px;" class="" placeholder="{site_title} | © Copyright {year} All rights reserved. {imprint} - {privacy_policy} {site_description}"><?php echo ! empty( $webinarignition_footer_text ) ? esc_html( $webinarignition_footer_text ) : '{site_title} | © Copyright {year} All rights reserved. {imprint} - {privacy_policy} {site_description}'; ?></textarea> 
                         <span class="help-block"><?php  _e( 'The text to appear in the footer of all WebinarIgnition pages and emails. Available placeholders:', 'webinarignition' ); ?> {site_title}, {year}, {imprint}, {privacy_policy}, {site_description}</span>
+                        <span class="help-block"><?php  _e( 'To display the footer please copy this shortcode', 'webinarignition' ); ?><code>[webinarignition_footer]</code></span>
                     </div>
                   </div>
 

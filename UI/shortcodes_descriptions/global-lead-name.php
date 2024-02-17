@@ -81,3 +81,12 @@ if (!empty($is_list)) {
     --><span class="code-example-copy"><?php echo __('Copy', 'webinarignition'); ?></span><!--
     --><span class="code-example-copied"><?php echo __('Copied. Input into your content!', 'webinarignition'); ?></span>
 </p>
+<p>
+    <?php echo __('Footer Shortcode', 'webinarignition'); ?>
+</p>
+
+<p class="code-example">
+    <span class="code-example-value">[webinarignition_footer]</span><!--
+    --><span class="code-example-copy"><?php echo __('Copy', 'webinarignition'); ?></span><!--
+    --><span class="code-example-copied"><?php echo __('Copied. Input into your content!', 'webinarignition'); ?></span>
+</p>

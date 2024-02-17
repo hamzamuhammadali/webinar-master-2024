@@ -402,6 +402,7 @@ class WebinarignitionPowerupsShortcodes {
 
     public static function init() {
         add_shortcode('wi_webinar_block', array('WebinarignitionPowerupsShortcodes', 'shortcode'));
+        add_shortcode('webinarignition_footer', array('WebinarignitionPowerupsShortcodes', 'webinarIgnition_footer_sc'));
     }
 
     public static function show_shortcode_description($block, $webinar_data, $display = true, $two_col = false) {
@@ -456,6 +457,11 @@ class WebinarignitionPowerupsShortcodes {
         ob_start(); 
         include WEBINARIGNITION_PATH . "UI/shortcodes_descriptions/{$path}.php";
         return ob_get_clean();
+    }
+
+    public static function webinarIgnition_footer_sc(){
+        $webinarignition_footer_text = get_option( 'webinarignition_footer_text', '' );
+        return $webinarignition_footer_text;
     }
 
     public static function shortcode($atts = array()) {
