@@ -474,5 +474,14 @@ $webinar_live_bgcolor = $webinar_data->webinar_live_bgcolor == "" ? "#000" : $we
 <?php wp_footer(); ?>
 
 <?php echo isset($webinar_data->footer_code) ? do_shortcode($webinar_data->footer_code) : ''; ?>
+<script type="text/javascript">
+(function($) {
+$(document).ready(function() {
+
+$('.webinar_page').addClass('et_smooth_scroll_disabled');
+
+});
+})(jQuery);
+</script>
 </body>
 </html>
