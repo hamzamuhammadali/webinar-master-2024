@@ -30,8 +30,8 @@ $cta_shadow_transperancy = ( (0.35 * $cta_shadow_transperancy) / 100 );
 
     .timedUnderArea.timedUnderAreaOverlay, .additional_autoaction_item {
         position: absolute;
-        height: 100%;
-        /*max-height: 98%;*/
+        height: auto;
+        max-height: 98%;
         left: 100vw;
         bottom: 0;
         right: 0;
