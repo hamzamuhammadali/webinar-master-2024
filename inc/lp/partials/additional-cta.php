@@ -53,7 +53,7 @@ foreach ($additional_autoactions as $index => $additional_autoaction) {
         $auto_action_title = $additional_autoaction['auto_action_btn_copy'];
     }
     ?>
-    <div id="wi-cta-<?php echo $index ?>-tab" class="timedUnderArea <?php echo $cta_border_desktop . $cta_border_mobile; ?> wi-cta-tab" style="display: inline-block; left:100vw;">
+    <div id="wi-cta-<?php echo $index ?>-tab" class="timedUnderArea <?php echo $cta_border_desktop . $cta_border_mobile; ?> wi-cta-tab" style="display: none; left:100vw;">
         <div id="orderBTNCopy_<?php echo $index ?>">
 	        <?php
 	        include WEBINARIGNITION_PATH . 'inc/lp/partials/print_cta.php';

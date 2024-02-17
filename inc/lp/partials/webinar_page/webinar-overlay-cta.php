@@ -27,13 +27,17 @@ $cta_shadow_transperancy = ( (0.35 * $cta_shadow_transperancy) / 100 );
     .timedUnderArea:after {
         display: none;
     }
-
+    .Test_Class_HOLA{
+        bottom: 0 !important;
+        max-height: 98%; 
+        height: auto !important;
+    }
     .timedUnderArea.timedUnderAreaOverlay, .additional_autoaction_item {
         position: absolute;
-        height: auto;
-        max-height: 98%;
+        height: 100%;
+        /* max-height: 98%; */
         left: 100vw;
-        bottom: 0;
+        /* bottom: 0; */
         right: 0;
         overflow: auto;
         -webkit-box-shadow: 0 1px 11px 1px rgba(0,0,0,<?php echo $cta_shadow_transperancy; ?>);

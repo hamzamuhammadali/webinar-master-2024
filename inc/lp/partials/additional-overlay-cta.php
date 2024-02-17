@@ -45,7 +45,7 @@ foreach ($additional_autoactions as $index => $additional_autoaction) {
 	}
 
     ?>
-    <div  id="wi-cta-<?php echo $index; ?>-tab" class="additional_autoaction_item timedUnderArea <?php echo $cta_border_desktop . $cta_border_mobile; ?> timedUnderAreaOverlay wi-cta-tab" style="display: inline-block; left:100vw; <?php echo $max_width; ?>">
+    <div  id="wi-cta-<?php echo $index; ?>-tab" class="Test_Class_HOLA additional_autoaction_item timedUnderArea <?php echo $cta_border_desktop . $cta_border_mobile; ?> timedUnderAreaOverlay wi-cta-tab" style="display: inline-block; left:100vw; <?php echo $max_width; ?>">
         <div id="overlayOrderBTNCopy_<?php echo $index ?>">
             <?php
             include WEBINARIGNITION_PATH . 'inc/lp/partials/print_cta.php';
