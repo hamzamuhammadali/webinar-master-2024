@@ -1531,6 +1531,7 @@
             }
 
             add_action( 'admin_init', array( &$this, '_add_license_activation' ) );
+            add_action( 'admin_init', array( &$this, '_add_webinar_main_page_link' ) );
             add_action( 'admin_init', array( &$this, '_add_premium_version_upgrade_selection' ) );
             add_action( 'admin_init', array( &$this, '_add_beta_mode_update_handler' ) );
             add_action( 'admin_init', array( &$this, '_add_user_change_option' ) );
@@ -24399,6 +24400,16 @@
             }
         }
 
+        function _add_webinar_main_page_link(){
+            $url = admin_url('admin.php?page=webinarignition-dashboard');
+            $this->add_plugin_action_link(
+                '<span style="font-weight:bold; color:#e64f1d;">Get Started</span>',
+                $url,
+                false,
+                12,
+                'webinars'
+            );
+        }
         /**
          * Adds "Activate License" or "Change License" link to the main Plugins page link actions collection.
          *

@@ -1448,6 +1448,8 @@ if ( ! function_exists( 'webinarignition_replay_page_scripts' ) ):
 //                'wooNonce'      => wp_create_nonce( 'joints_woo_nonce' ),
             ) );
         endif;
+         wp_enqueue_style( 'webinarignition_webinar_modern' );
+        wp_enqueue_script( 'webinarignition_webinar_modern_js' );
     }
 endif;
 

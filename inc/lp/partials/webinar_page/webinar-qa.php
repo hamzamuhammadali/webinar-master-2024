@@ -28,6 +28,15 @@ if ( $webinar_data->webinar_qa !== "hide" ) {
     ?>
     <?php if (!$is_compact) echo '<div class="webinarExtraBlock">';?>
 <!--        <h4>01 - wp-content/plugins/webinar-ignition/inc/lp/partials/webinar_page/webinar-qa.php</h4>-->
+<script type="text/javascript">
+(function($) {
+jQuery(document).ready(function() {
+
+jQuery('#main-content').addClass('et_smooth_scroll_disabled');
+
+});
+})(jQuery);
+</script>
     <?php
     if ('chat' === $webinar_data->webinar_qa && !WebinarignitionPowerups::is_two_way_qa_enabled($webinar_data)) {
         $webinar_data->webinar_qa = 'we';

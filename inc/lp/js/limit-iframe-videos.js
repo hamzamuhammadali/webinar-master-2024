@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
 				}
 
 				if( response.timeover ) {
-					
+					window.onbeforeunload = null;
 					$(document.body).append( response.popup );
 
 					if( undefined === wi_timeover_popop_display ) {
@@ -36,9 +36,9 @@ jQuery(document).ready(function($){
 
 					wi_timeover_popop_display = true;
 
-					setInterval( function(){
+					// setInterval( function(){
 						window.location.reload();
-					}, 1000 );
+					// }, 1000 );
 				}
 			},
 			error: function (response) {

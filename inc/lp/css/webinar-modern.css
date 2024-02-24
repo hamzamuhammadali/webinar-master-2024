@@ -3731,6 +3731,7 @@ progress {
 .wi-nav-tabs {
     border-bottom: 1px solid #dee2e6; }
 .wi-nav-tabs .wi-nav-item {
+    list-style-type: none;
     margin: 0; }
 .wi-nav-tabs .wi-nav-link {
     margin-bottom: -1px;

@@ -38,6 +38,8 @@ if( isset( $_GET['lid'] ) ) {
   position: relative;
   width: 100px;
   height: 100px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 100px;
 }
 
 .base-timer__svg {
