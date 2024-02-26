@@ -2017,6 +2017,10 @@ function webinarignition_broadcast_msg_poll_callback() {
 		$showHTML .= '</div>';
 
 		$hash = wp_hash($showHTML . time());
+		if( class_exists('advancediFrame') ){
+			$advance_iframe_sc = $showHTML .get_cta_aiframe_sc($ID, '0', '');
+			$showHTML = apply_filters( 'ai_handle_temp_pages', $advance_iframe_sc );
+		}
 		wp_send_json( [ "air_toggle" => "ON", "response" => do_shortcode($showHTML), "hash" => $hash ] );
 	}
 	die();

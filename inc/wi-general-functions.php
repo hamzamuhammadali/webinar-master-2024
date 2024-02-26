@@ -43,7 +43,7 @@ if( !function_exists('get_cta_aiframe_sc') ) {
 			'hide_page_until_loaded'       => 'true',
 			'scrolling'                    => 'no',
 			'height'                       => '0',
-			'onload_resize_delay'          => '2000',
+			'onload_resize_delay'          => '300',
 			'width'                        => '100%',
 			'content_id'                   => '',
 			'content_styles'               => '',

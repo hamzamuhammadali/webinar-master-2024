@@ -461,7 +461,18 @@ class WebinarignitionPowerupsShortcodes {
 
     public static function webinarIgnition_footer_sc(){
         $webinarignition_footer_text = get_option( 'webinarignition_footer_text', '' );
-        return $webinarignition_footer_text;
+        $footer_copy            = str_replace( "{site_title}", get_bloginfo( 'name' ), $webinarignition_footer_text );
+        $footer_copy            = str_replace( "{year}", date( "Y" ), $footer_copy );
+        $footer_copy            = str_replace( "{site_description}", get_bloginfo( 'description' ), $footer_copy );
+        $privacy_policy_link    = get_privacy_policy_url();
+        $privacy_policy         = '<a href="'.$privacy_policy_link.'" target="_blank">'.__( "Privacy Policy", "webinarignition").'</a>';
+        $footer_copy            = str_replace( "{privacy_policy}", $privacy_policy, $footer_copy );
+        $imprint_page           = wi_get_page_by_title('Imprint');
+        $imprint_page           =  empty( $imprint_page ) ? wi_get_page_by_title('Impressum') : $imprint_page;
+        $imprint_page_url       = !empty( $imprint_page ) ? get_permalink($imprint_page->ID) : '';
+        $imprint_page_link      = '<a href="'.$imprint_page_url.'" target="_blank">'.__( "Imprint", 'webinarignition').'</a>';    
+        $footer_copy            = is_object($imprint_page) ?  str_replace( "{imprint}", $imprint_page_link, $footer_copy ) :  str_replace( "{imprint}", ' ', $footer_copy ); 
+        return $footer_copy;
     }
 
     public static function shortcode($atts = array()) {
