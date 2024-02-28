@@ -157,7 +157,9 @@ $webinar_type = $webinar_data->webinar_date == "AUTO" ? 'evergreen' : 'live';
 
         <?php
         if ( $webinar_data->webinar_date != "AUTO" && $webinar_data->live_stats != 'disabled' ) {
+
             ?>
+            sessionStorage.removeItem('hash');
             $.Updater(ajaxurl, {
                 method: 'get',
                 data: {
@@ -174,7 +176,6 @@ $webinar_type = $webinar_data->webinar_date == "AUTO" ? 'evergreen' : 'live';
                 var jsonobj     = JSON.parse(jsonString);
                 var orderBTN    = $("#orderBTN");
                 var hash        =  sessionStorage.getItem('hash');
-
                 if (jsonobj.air_toggle !== "OFF" && ( !hash || hash != jsonobj.hash  )) {
                     $('.webinarVideoCTA').addClass('webinarVideoCTAActive');
                     orderBTN.show();
