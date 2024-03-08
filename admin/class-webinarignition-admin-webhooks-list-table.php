@@ -128,9 +128,10 @@ class WebinarIgnition_Admin_Webhooks_List_Table extends WP_List_Table {
 	}
 
 	function column_name($item) {
+		$nonce = wp_create_nonce('delete_webhook_' . $item['id']);
 		$actions = array(
 			'edit'      => sprintf('<a href="?page=%s&tab=%s&action=%s&id=%s">%s</a>',$_REQUEST['page'], $_REQUEST['tab'], 'edit', $item['id'], __('Edit')),
-			'delete'      => sprintf('<a href="?page=%s&tab=%s&action=%s&id=%s">%s</a>',$_REQUEST['page'], $_REQUEST['tab'], 'delete', $item['id'], __('Delete'))
+			'delete'      => sprintf('<a href="?page=%s&tab=%s&action=%s&id=%s&wp_nonce=%s">%s</a>',$_REQUEST['page'], $_REQUEST['tab'], 'delete', $item['id'],$nonce, __('Delete'))
 		);
 
 		return sprintf('%1$s %2$s', $item['name'], $this->row_actions($actions) );

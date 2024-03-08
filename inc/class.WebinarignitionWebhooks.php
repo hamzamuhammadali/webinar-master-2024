@@ -445,16 +445,18 @@ if( !class_exists('WebinarIgnitionWebhooks') ) {
 					$webhook_id = absint(filter_input( INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT ));
 
 					if( $action === 'delete' && !empty($webhook_id) ) {
-						global $wpdb;
-						$table = "{$wpdb->prefix}webinarignition_webhooks";
-						$deleted = $wpdb->delete($table, ['id' => $webhook_id], ['%d']);
-						if($deleted) {
-							wp_safe_redirect( add_query_arg( [
-								'page'   => 'webinarignition_settings',
-								'tab'    => 'webhooks',
-								'deleted'  => 1
-							], admin_url('admin.php') ) );
-							exit;
+						if (wp_verify_nonce($_GET['wp_nonce'], 'delete_webhook_' . $webhook_id)) {
+							global $wpdb;
+							$table = "{$wpdb->prefix}webinarignition_webhooks";
+							$deleted = $wpdb->delete($table, ['id' => $webhook_id], ['%d']);
+							if($deleted) {
+								wp_safe_redirect( add_query_arg( [
+									'page'   => 'webinarignition_settings',
+									'tab'    => 'webhooks',
+									'deleted'  => 1
+								], admin_url('admin.php') ) );
+								exit;
+							}
 						}
 
 					}
